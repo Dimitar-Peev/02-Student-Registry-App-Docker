@@ -1,7 +1,7 @@
 version: '3'
 services:
   app:
-    image: ${DOCKER_USERNAME}/${APP_NAME}:${IMAGE_TAG}
+    image: ${DOCKER_USERNAME}/${APP_NAME}:${IMAGE_TAG} # Replace with your Docker Hub username, app name, and image tag
     ports:
       - "3030:3030"
     environment:
