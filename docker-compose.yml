@@ -3,6 +3,6 @@ services:
   app:
     image: ${DOCKER_USERNAME}/${APP_NAME}:${IMAGE_TAG} # Replace with your Docker Hub username, app name, and image tag
     ports:
-      - "3030:3030"
+      - "3030:3030" # Map port 3030 of the host to port 3030 of the container
     environment:
       - NODE_ENV=production
