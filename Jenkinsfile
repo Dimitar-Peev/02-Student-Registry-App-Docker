@@ -59,6 +59,9 @@ pipeline {
         }
 
         stage('Deploy (CD)') {
+            when {
+                branch 'main'
+            }
             steps {
                 bat """
                 docker pull %IMAGE_FULL%
