@@ -80,8 +80,5 @@ pipeline {
         failure {
             echo "❌ Pipeline failed"
         }
-        cleanup {
-            cleanWs(deleteDirs: true, notFailBuild: true)
-        }
     }
 }
