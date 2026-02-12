@@ -1,1 +1,1 @@
-Student Registry App
+Student Registry App - Demo
