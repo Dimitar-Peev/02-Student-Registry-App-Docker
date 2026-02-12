@@ -18,7 +18,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'npm ci'
             }
         }
 
@@ -30,9 +30,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                bat """
-                docker build -t %IMAGE_FULL% .
-                """
+                bat "docker build -t %IMAGE_FULL% ."
             }
         }
 
@@ -54,6 +52,7 @@ pipeline {
             steps {
                 bat """
                 docker push %IMAGE_FULL%
+                docker logout
                 """
             }
         }
