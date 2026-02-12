@@ -73,13 +73,15 @@ pipeline {
     post {
         always {
             echo 'Pipeline execution completed.'
-            cleanWs()
         }
         success {
             echo "✅ Deployment successful: ${IMAGE_FULL}"
         }
         failure {
             echo "❌ Pipeline failed"
+        }
+        cleanup {
+            cleanWs(deleteDirs: true, notFailBuild: true)
         }
     }
 }
